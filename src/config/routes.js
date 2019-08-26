@@ -16,5 +16,6 @@ apiRouter.put('/product', products.create);
 
 apiRouter.get('/category', categories.all);
 apiRouter.put('/category', categories.create);
+apiRouter.get('/category/:id/product', categories.products);
 
 module.exports = apiRouter;

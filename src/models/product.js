@@ -13,6 +13,14 @@ const productSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectID,
 		required: true
 	},
+}, {
+	toJSON: {
+		transform: (doc, ret) => {
+			ret.id = ret._id;
+			delete ret._id;
+			return ret;
+		}
+	}
 });
 
 const Product = mongoose.model('product', productSchema);
