@@ -12,6 +12,7 @@ apiRouter.post('/user/login', users.login);
 apiRouter.get('/user/me', authorization, users.me);
 
 apiRouter.get('/product', products.all);
+apiRouter.get('/product/:id', products.getById);
 apiRouter.put('/product', products.create);
 
 apiRouter.get('/category', categories.all);
