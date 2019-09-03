@@ -22,5 +22,12 @@ module.exports = {
 				res.json(product);
 			})
 			.catch(err => res.status(500).json(err));
+	},
+	getByIds: (req, res) => {
+		Product.find({
+			_id: { $in: req.body.ids }
+		})
+			.then(products => res.json(products))
+			.catch(err => res.status(500).json(err));
 	}
 };

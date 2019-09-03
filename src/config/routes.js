@@ -14,9 +14,12 @@ apiRouter.get('/user/me', authorization, users.me);
 apiRouter.get('/product', products.all);
 apiRouter.get('/product/:id', products.getById);
 apiRouter.put('/product', products.create);
+apiRouter.post('/product/bulk', products.getByIds);
 
 apiRouter.get('/category', categories.all);
 apiRouter.put('/category', categories.create);
 apiRouter.get('/category/:id/product', categories.products);
+
+
 
 module.exports = apiRouter;
