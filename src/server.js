@@ -7,6 +7,7 @@ const cors = require('cors');
 const apiRouter = require('./config/routes');
 const port = env.db.port;
 
+app.use(express.static('public'));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
