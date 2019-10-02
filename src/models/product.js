@@ -13,6 +13,10 @@ const productSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectID,
 		required: true
 	},
+	image: {
+		type: String,
+		required: true
+	}
 }, {
 	toJSON: {
 		transform: (doc, ret) => {

@@ -4,7 +4,20 @@ const products = require('../controllers/products');
 const categories = require('../controllers/categories');
 const authorization = require('./middlewares/authorization');
 const multer = require('multer');
-const upload = multer({dest: 'public'})
+const path = require('path');
+
+var storage = multer.diskStorage({
+    destination: function(req, res, cb) {
+        cb(null, 'public');
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now()+path.extname(file.originalname));
+    }
+  });
+
+  const upload = multer({
+      storage
+});
 
 const apiRouter = express.Router();
 
