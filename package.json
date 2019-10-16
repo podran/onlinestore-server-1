@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/evyros/onlinestore-server.git"
   },
+  "engines": {
+    "node": "10.16.3"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
